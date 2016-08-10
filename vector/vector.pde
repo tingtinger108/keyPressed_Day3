@@ -17,6 +17,8 @@
 
 PVector position;
 PVector velocity;
+PVector acceleration;
+
 float r,g,b;
 int radius;
 
@@ -34,6 +36,8 @@ void draw(){
   rect(0,0,width,height);///redraw 10 tint rect over background every frame,ceate fade-out effect
 
   position.add(velocity);
+  //velocity.add(acceleration); 
+  //Gravity is just a change in velocity (acceleration) in the y direction
   
   if(position.x >= (width-radius/2)||(position.x<=radius/2)){
     velocity.x=velocity.x *-1; //reverse xDirection
